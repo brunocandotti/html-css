@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mídias em HTML</title>
+  <style>
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    @media screen and (max-width: 750px) {
+      /* Estilo para telas pequenas (imagem-pequena) */
+      #imagem-medio, #imagem-grande {
+        display: none;
+      }
+    }
+
+    @media screen and (min-width: 751px) and (max-width: 1049px) {
+      /* Estilo para telas médias (imagem-medio) */
+      #imagem-grande, #imagem-pequena {
+        display: none;
+      }
+    }
+
+    @media screen and (min-width: 1050px) {
+      /* Estilo para telas grandes (imagem-grande) */
+      #imagem-medio, #imagem-pequena {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Imagem dinâmica</h1>
+  </header>
+
+  <section>
+   
+    <!-- Imagem para telas grandes (padrão) -->
+    <picture>
+      <source media="(min-width: 1050px)" srcset="imagens/foto-g.png" type="image/png">
+      <img id="imagem-grande" src="imagens/foto-g.png" alt="Imagem para telas grandes">
+    </picture>
+
+    <!-- Imagem para telas médias -->
+    <picture>
+      <source media="(min-width: 751px) and (max-width: 1049px)" srcset="imagens/foto-m.png" type="image/png">
+      <img id="imagem-medio" src="imagens/foto-m.png" alt="Imagem para telas médias">
+    </picture>
+
+    <!-- Imagem para telas pequenas -->
+    <img id="imagem-pequena" src="imagens/foto-p.png" alt="Imagem para telas pequenas">
+
+  </section>
+
+  <!-- Adicione mais seções conforme necessário para outras mídias -->
+
+</body>
+</html>
